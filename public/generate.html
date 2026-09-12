@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jobjolt-resume builder-generate</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="icon" href="" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a class="li_elements" href="generate.html" onclick="page_loggedin()">Generate</a></li>
+            <li><a class="li_elements" href="">Refine</a></li>
+            <li><a class="li_elements" href="">Pricing</a></li>
+            <li><a class="li_elements" href="index.html">Home</a></li>
+            <li id="Login"><a class="li_elements" href="login.html">Login</a></li>
+            <li class="li_elements"><img title="menue" src="images/menue.png" alt="menue icon"></li>
+        </ul>
+    </nav>
+    <h3 class="pi_header">Personal information</h3>
+
+    <form id="inputs">
+        <label for="name_input" class="input_lable">Name</label><br>
+        <input type="text" class="inputs" id="name_input" placeholder="Enter your Full Name"><br>
+
+        <label for="email_input" class="input_lable">Email</label><br>
+        <input type="text" class="inputs" id="email_input" placeholder="Enter your Email"><br>
+
+        <label for="phone_input" class="input_lable">Phone number</label><br>
+        <input type="text" class="inputs" id="phone_input" placeholder="Enter your Phone Number"><br>
+
+        <label for="location_input" class="input_lable">Location</label><br>
+        <input type="text" class="inputs" id="location_input" placeholder="Enter your Location"><br>
+
+        <label for="input_area">Summary</label>
+        <textarea type="text" placeholder="describe your self and your skills" id="input_area"></textarea><br>
+
+        <label for="image_drag_drop">Upload file (optional)</label>
+        <div id="image_drag_drop">
+            <p>Drop image here<br>or<br>
+            <button id="upload_profile_img" type="button" onclick="payment_redirect()">Upload file</button>
+            </p>
+            <input type="file" id="profile_img" style="display: none;">
+        </div>
+
+        <button type="button" class="generate">generate<img src="images/ai_twinkle.png" alt="ai generate twinkle">
+        </button>
+    </form>
+
+    <ul class="conatiner">
+    </ul>
+    <script src="script.js"></script>
+</body>
+</html>

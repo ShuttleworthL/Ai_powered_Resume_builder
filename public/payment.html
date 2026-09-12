@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment + Pricing</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="icon" href="" type="image/x-icon">
+</head>
+<body>
+    <button id="subscribe">Subscribe</button>
+    <script>
+        const subscribe = document.getElementById("subscribe");
+
+        subscribe.addEventListener("click", async ()=>{
+            try {
+                const response = await fetch("/subscribe", {
+                    method: "POST",
+                    headers: {"content-type": "application/json"},
+                })
+            }
+            catch (error) {
+                window.alert(error);
+            }
+        })
+    </script>
+</body>
+</html>

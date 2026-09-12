@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="icon" href="" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a class="li_elements" href="generate.html" onclick="page_loggedin()">Generate</a></li>
+            <li><a class="li_elements" href="">Refine</a></li>
+            <li><a class="li_elements" href="">Pricing</a></li>
+            <li><a class="li_elements" href="index.html">Home</a></li>
+            <li id="Login"><a class="li_elements" href="login.html">Login</a></li>
+            <li class="li_elements"><img title="menue" src="images/menue.png" alt="menue icon"></li>
+        </ul>
+    </nav>
+    <div class="signup_box">
+        <label>Sign Up Now</label>
+        <input type="text" id="username" class="signup_info" placeholder="Username"><br><br>
+        <input type="password" id="password" class="signup_info" placeholder="Password"><br><br>
+        <button type="submit" id="submit" onclick="loggedin()">Create Account</button>
+    </div>
+    <script>
+        const submit = document.getElementById("submit");
+        submit.addEventListener("click", async ()=>{
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            try {
+                const response = await fetch("/create_account", {
+                    method: "POST",
+                    headers: {"content-type": "application/json"},
+                    body: JSON.stringify({username: username, password: password})
+                })
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error);
+                window.location.href = "/index.html";
+            }
+            catch (error) {
+                window.alert(error)
+            }
+        });
+    </script>
+</body>
+</html>
